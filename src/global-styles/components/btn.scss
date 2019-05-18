@@ -1,0 +1,27 @@
+@import "../variables";
+@import "../mixin";
+
+.Btn{
+  display: block;
+  max-width: 150px;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  border: 1px solid $grey;
+
+  font-family: $main-font;
+  background: none;
+  text-align: center;
+
+
+  cursor: pointer;
+  transition: 0.3s;
+
+  &--primary{
+    @include btn-hover($white, $main-color);
+  }
+
+  &--cancel{
+    @include btn-hover($white, $red);
+  }
+
+}

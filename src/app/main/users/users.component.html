@@ -1,0 +1,25 @@
+<header class="Header Container">
+  <h2 class="Title h2">Contact list:</h2>
+  <input type="text" placeholder="Search..." class="Input Search">
+</header>
+<div class="Content Container">
+  <div app-loader class="Loader" *ngIf="!users"></div>
+  <div class="Item" *ngFor="let user of users">
+    <app-user-item
+      [profile]="user"
+      (onMoreInfo)="currentViewProfile = $event">
+    </app-user-item>
+  </div>
+</div>
+<div class="Block-tile Message" [hidden]="!err">
+  <p>{{err}}</p>
+  <div class="Btn Btn--cancel" (click)="err = ''">Cancel</div>
+</div>
+
+
+<div class="MoreInfo Block-tile" *ngIf="currentViewProfile">
+  <div class="cross-btn" (click)="currentViewProfile = null">close</div>
+  <div class="MoreInfo-avatar"></div>
+  <div class="Name">{{currentViewProfile.name}}</div>
+  <div class="Email">{{currentViewProfile.email}}</div>
+</div>

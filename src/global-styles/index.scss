@@ -1,0 +1,14 @@
+@import "./variables";
+@import "./mixin";
+
+@import "./components/block-tile";
+@import "./components/input";
+@import "./components/btn";
+@import "./components/titles";
+@import "./components/container";
+@import "./components/spinners";
+@import "./components/disabled";
+
+body{
+  font-family: $main-font;
+}

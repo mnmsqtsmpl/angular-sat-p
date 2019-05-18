@@ -1,0 +1,7 @@
+<div class="Avatar" [ngStyle]="{'background-image': 'url(https://picsum.photos/id/'+ profile.id*10 +'/200/300)'}"></div>
+<div class="Content">
+  <h4 class="Name">{{profile.name}}</h4>
+  <a class="Email" [href]="'mailto:'+profile.email">{{profile.email}}</a>
+  <a class="Btn Btn--primary" (click)="more()">More</a>
+</div>
+

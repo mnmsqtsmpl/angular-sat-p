@@ -1,0 +1,66 @@
+@import "../../../global-styles/variables";
+
+:host{
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.Header{
+  position: relative;
+  height: 30px;
+  padding: 1em;
+  border-bottom: 1px solid $grey;
+
+  .Title{
+    margin-bottom: 0;
+  }
+
+  .Search{
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    border-color: $grey;
+
+    transform: translateY(-50%);
+  }
+}
+
+
+.Content{
+  display: flex;
+    flex-wrap: wrap;
+  position: relative;
+  height: calc(100vh - 60px);
+  padding: 1em;
+  overflow: auto;
+
+  .Item{
+    max-width: 250px;
+    width: 100%;
+    padding: 5px;
+  }
+
+  .Loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.Message{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.MoreInfo{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}

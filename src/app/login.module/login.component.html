@@ -1,0 +1,27 @@
+<form class="Block-tile Form" [formGroup]="loginGroup">
+  <input type="text" class="Input" placeholder="login" formControlName="name">
+  <div class="err" *ngIf="loginGroup.controls.name.invalid && isSubmited">
+    <ng-container *ngIf="loginGroup.controls.name.errors.required">Required field</ng-container>
+    <ng-container *ngIf="loginGroup.controls.name.errors.loginNameIncorrect">Name should start with '@'</ng-container>
+  </div>
+
+  <input type="password" class="Input" placeholder="password" formControlName="pwd">
+  <div class="err" *ngIf="loginGroup.controls.pwd.invalid && isSubmited">
+    <ng-container *ngIf="loginGroup.controls.pwd.errors.required">Required field</ng-container>
+    <ng-container *ngIf="loginGroup.controls.pwd.errors.minlength">Min length is 5 symbols</ng-container>
+  </div>
+
+
+
+  <button class="Btn Btn--primary" type="button" (click)="signUp()">Sign up</button>
+  <button class="Btn Btn--cancel" type="button" (click)="signIn()">Sign in</button>
+</form>
+<div class="Block-tile Message" [hidden]="!message">
+  <p>{{message}}</p>
+  <div class="Btn Btn--primary">Ok</div>
+</div>
+<div class="Block-tile Message" [hidden]="!errMessage">
+  <p>{{errMessage}}</p>
+  <div class="Btn Btn--cancel" (click)="errMessage = ''">Cancel</div>
+</div>
+
